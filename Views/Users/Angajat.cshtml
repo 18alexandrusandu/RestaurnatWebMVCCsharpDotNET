@@ -1,0 +1,22 @@
+﻿@model WebApplication5.Models.User
+@{
+    ViewData["Title"] = "Angajat";
+
+}
+
+<h1>Angajat</h1>
+
+
+
+<a asp-controller="Menu" asp-action="Index">See Menu and Add products to comenzi</a>
+<br />
+<a asp-controller="Comenzi" asp-action="Index">Manage Comenzi</a>
+@if (Model != null)
+{   <h4>Account data</h4>
+    <p>Welcome @Html.DisplayFor(model=> model.name)</p>
+    <p>Your username is:@Html.DisplayFor(model=> model.username)</p>
+    <p>Your id is:@Html.DisplayFor(model=> model.Id)</p>
+    <p>Your role is:@Html.DisplayFor(model=> model.role)</p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit data acoount</a>
+}
+

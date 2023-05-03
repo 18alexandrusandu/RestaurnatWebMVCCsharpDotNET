@@ -1,0 +1,80 @@
+﻿@model WebApplication5.Models.ComandaData
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+@Html.ValidationMessage(string.Empty)
+<div>
+    <h4>Comanda</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.status)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dateAndHour)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dateAndHour)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.pretTotal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.pretTotal)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+<div>
+<h4>Produse Comandate</h4>
+    @if (Model.produseList!=null)
+@foreach (var item2 in Model.produseList)
+  {
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(item=>item2.Item.numePreparat)
+    </dt>
+    <dd class="col-sm-10">
+         @Html.DisplayFor(item=>item2.Item.numePreparat)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(item=>item2.Item.pret)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(item=>item2.Item.pret)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(item=>item2.Quantity)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(item=>item2.Quantity)
+    </dd>
+
+</dl>
+}
+</div>
+
+
+
+
+
+
+

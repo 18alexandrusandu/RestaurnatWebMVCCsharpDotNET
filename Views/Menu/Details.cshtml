@@ -1,0 +1,37 @@
+﻿@model WebApplication5.Models.MenuItem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MenuItem</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.numePreparat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.numePreparat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pret)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pret)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.stoc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.stoc)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+    <a  asp-controller="Comenzi" asp-action="AddToComanda" asp-route-id="@Model?.Id">Add to Comanda</a>
+    <a asp-action="Index">Back to List</a>
+</div>

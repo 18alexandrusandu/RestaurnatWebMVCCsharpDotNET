@@ -1,0 +1,45 @@
+﻿@model Reports
+@{
+    ViewData["Title"] = "Report";
+}
+
+<h1>Report</h1>
+
+<form asp-action="See_Report">
+
+<h4>Interval calendarisitc:</h4>
+<label>Data inceput</label>
+    <input name="start" type="date" />
+<label>Data sfarsit</label>
+    <input name="end" type="date" />
+ <br />
+ <div class="form-group">
+    <input type="submit" value="Get Report" class="btn btn-primary" />
+ </div>
+
+</form>
+
+<br />
+
+@if(@Model!=null && @Model.Type=="Report")
+{
+<p>Report area></p>
+<textarea>@Model.Data</textarea>
+}
+<br />
+<form asp-action="See_Stat">
+<input type="submit" value="Get Statsistici"> 
+</form>
+<br />
+
+@if(@Model!=null && @Model.Type=="Stat")
+{
+<p>Statistici produse comandate</p>
+<br />
+<textarea>@Model.Data</textarea>
+    <br />
+}
+<br />
+<a asp-action="Export"asp-route-id="{type:@Model.Type,data:@Model.Data}">Export</a>
+
+

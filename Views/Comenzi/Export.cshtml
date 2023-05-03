@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Reports
+
+<form asp-action="Export">
+
+
+
+
+    <input asp-for="RawData" type="hidden" value="@Model.RawData" />
+
+    <label>Add filename</label>
+    <input name="filename" />
+    <br />
+    <label>Select Type of export</label>
+    <br />
+    <label>  Csv</label>
+    <input type="radio" checked=true name="type" value="Csv">
+    <br />
+    <label> Xml</label>
+    <input type="radio" name="type" value="Xml">
+    <br />
+
+    <input type="submit" />
+
+</form>
